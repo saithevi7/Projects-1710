@@ -12,7 +12,7 @@ void setup() {
   deemo.resize(deemo.width/2, deemo.height/2);
   
   deemoLeftside = loadImage("deemoLeftside.png");
-  deemoLeftside.resize(deemoLeftside.width/2, deemoLeftside.height/2);
+  deemoLeftside.resize(deemoLeftside.width/3, deemoLeftside.height/3);
   
   deemoRightside = loadImage("deemoRightside.png");
   deemoRightside.resize(deemoRightside.width/2, deemoRightside.height/2);
