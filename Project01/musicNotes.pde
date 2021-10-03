@@ -1,16 +1,15 @@
 class musicNotes {
   
-  PImage musicNotes;
+  PImage EighthNotes;
   PVector position;
   boolean appear = true;
   
   musicNotes(float x, float y) {
     position = new PVector(x, y);
   }
-   
-  
+     
   void setup() {
-    musicNotes = loadImage("musicNote.png");
+    EighthNotes = loadImage("musicNote.png");
   }
   
   void update() {
@@ -18,7 +17,7 @@ class musicNotes {
   
   void draw() {
     if(appear) {
-      image(musicNotes, position.x, position.y, 50, 50);
+      image(EighthNotes, position.x, position.y, 50, 50);
     }
   }
   
