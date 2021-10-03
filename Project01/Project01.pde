@@ -1,5 +1,5 @@
 int numDeemo = 1;
-int numNotes = 10;
+int numNotes = 6;
 
 Deemo[] mainDeemo = new Deemo[numDeemo];
 musicNotes[] notes = new musicNotes[numNotes];
