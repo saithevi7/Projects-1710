@@ -6,7 +6,7 @@ Project 1 - Ghostly figure name "Deemo" in search for his muscial notes.
 You can either block him by simply putting your crusor on him and he moves away 
 OR  you can allow him to get all of his notes for a suprise...
 
-P.S. Drawings for the Deemo figure and Notes were drawn.
+P.S. Pictures for the Deemo figure and Notes were drawn.
 */
 
 int numDeemo = 1;
@@ -24,6 +24,7 @@ void setup() {
   
   for (int i=0; i<notes.length; i++) {
     notes[i] = new musicNotes(random(width), random(height));
+     
   }
     
 }
@@ -38,5 +39,6 @@ void draw() {
   for (int i=0; i<notes.length; i++) {
     notes[i].run();
     
-  }
+    
+   }
 }
