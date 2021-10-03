@@ -1,7 +1,7 @@
 class Deemo {
 
   PVector position, target;
-  PImage faceCurrent, deemo, deemoLeftside, deemoRightside;
+  PImage currentDeemo, deemo, deemoLeftside, deemoRightside;
   int findNotes;
   
   boolean move = false;
@@ -29,7 +29,7 @@ class Deemo {
     deemoRightside.resize(deemoRightside.width/3, deemoRightside.height/3);
 
     
-    faceCurrent = deemo;
+    currentDeemo = deemo;
   }
   
   void update() {
@@ -39,7 +39,7 @@ class Deemo {
     if (move) {
       searching = false;
       moveMarkTime = millis();
-      faceCurrent = deemoLeftside; // worried expression
+      currentDeemo = deemoLeftside; // worried expression
       if (position.dist(target) < triggerDistance2) {
         pickNoteTarget();
       }
@@ -49,7 +49,7 @@ class Deemo {
         searching = true;
       }
       else if (!move && millis() > moveMarkTime + moveTimeOut/6) {
-       faceCurrent = deemo; // neutral expression
+       currentDeemo = deemo; // neutral expression
     }
   }
   
@@ -68,7 +68,7 @@ class Deemo {
   void draw() {    
     imageMode(CENTER);
   
-    image(faceCurrent, position.x, position.y);
+    image(currentDeemo, position.x, position.y);
   }
   
   void run() {
