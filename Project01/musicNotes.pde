@@ -1,6 +1,5 @@
 class musicNotes {
   
-  PImage EighthNotes;
   PVector position;
   boolean appear = true;
   
@@ -8,16 +7,18 @@ class musicNotes {
     position = new PVector(x, y);
   }
      
-  void setup() {
-    EighthNotes = loadImage("musicNote.png");
-  }
-  
   void update() {
   }
   
   void draw() {
     if(appear) {
-      image(EighthNotes, position.x, position.y, 50, 50);
+      ellipseMode(CENTER);
+      fill(0);
+      ellipse(position.x, position.y, 30, 30);
+      
+      fill(0);
+      rect(position.x+4.5, position.y-55, 10, 60);
+      
     }
   }
   
