@@ -23,11 +23,7 @@ class Deemo {
     
     deemoLeftside = loadImage("deemoLeftside.png");
     deemoLeftside.resize(deemoLeftside.width/3, deemoLeftside.height/3);
-    
-    deemoRightside = loadImage("deemoRightside.png");
-    deemoRightside.resize(deemoRightside.width/3, deemoRightside.height/3);
-
-    
+        
     currentDeemo = deemo;
   }
   
