@@ -17,7 +17,7 @@ class Deemo {
   // Constructor
   Deemo(float x, float y) {
     position = new PVector(x, y);
-    pickEscapeTarget();
+    pickNoteTarget();
     
     deemo = loadImage("deemo.png");
     deemo.resize(deemo.width/2, deemo.height/2);
@@ -41,7 +41,7 @@ class Deemo {
       moveMarkTime = millis();
       faceCurrent = deemoLeftside; // worried expression
       if (position.dist(target) < triggerDistance2) {
-        pickEscapeTarget();
+        pickNoteTarget();
       }
       // nothing happens, then search for target
       if (!searching) {
@@ -76,7 +76,7 @@ class Deemo {
     draw();
   }
   
-  void pickEscapeTarget() {
+  void pickNoteTarget() {
     target = new PVector(random(50, width-50), random(50, height-50));
   }
   
