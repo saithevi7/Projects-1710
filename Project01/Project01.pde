@@ -1,3 +1,11 @@
+/* Sairus Pradhan (218946467)
+LE EECS 1710 - Lab 1
+09 / 28/ 2021
+Project 1 - Ghostly figure name "Deemo" in search for his muscial notes.
+You can either block him by simply putting your crusor on him and he moves away 
+OR  you can allow him to get all of his notes for a suprise...
+*/
+
 int numDeemo = 1;
 int numNotes = 12;
 
