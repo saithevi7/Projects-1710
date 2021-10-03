@@ -10,14 +10,14 @@ class Deemo {
    
   boolean searching = false;
   
-  float triggerDistance1 = 100;
+  float triggerDistance1 = 70;
   float triggerDistance2 = 25;
   float movementSpeed = 0.08;
     
   // Constructor
   Deemo(float x, float y) {
     position = new PVector(x, y);
-    pickNoteTarget();
+    pickNoteFind();
     
     deemo = loadImage("deemo.png");
     deemo.resize(deemo.width/2, deemo.height/2);
@@ -39,9 +39,9 @@ class Deemo {
     if (move) {
       searching = false;
       moveMarkTime = millis();
-      currentDeemo = deemoLeftside; // worried expression
+      currentDeemo = deemoLeftside; 
       if (position.dist(target) < triggerDistance2) {
-        pickNoteTarget();
+        pickNoteFind();
       }
       // nothing happens, then search for target
       if (!searching) {
@@ -76,7 +76,7 @@ class Deemo {
     draw();
   }
   
-  void pickNoteTarget() {
+  void pickNoteFind() {
     target = new PVector(random(50, width-50), random(50, height-50));
   }
   
