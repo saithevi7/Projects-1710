@@ -6,13 +6,12 @@ class Deemo {
   
   boolean move = false;
   int moveMarkTime = 0;
-  int moveTimeOut = 3000; // Processing measures time in milliseconds
+  int moveTimeOut = 2200; 
    
   boolean searching = false;
   
   float triggerDistance1 = 70;
-  float triggerDistance2 = 25;
-  float movementSpeed = 0.08;
+  float triggerDistance2 = 40;
     
   // Constructor
   Deemo(float x, float y) {
@@ -48,13 +47,14 @@ class Deemo {
         noteTarget();
         searching = true;
       }
-      else if (!move && millis() > moveMarkTime + moveTimeOut/6) {
+      else if (!move && millis() > moveMarkTime + moveTimeOut/2) {
        currentDeemo = deemo; // neutral expression
     }
   }
   
+    // delay in gaining the note to give more of a "ghostly" feeling
     if (move || searching) {
-      position = position.lerp(target, movementSpeed).add(new PVector(random(-5, 5), random(-5, 5)));
+      position = position.lerp(target, 0.08).add(new PVector(random(-1, 2), random(-1, 2)));
     }
     
     if (searching && position.dist(target) < 5) {
@@ -62,7 +62,8 @@ class Deemo {
       noteTarget();
     }
     
-    position.y += sin(millis()) / 2;
+    position.y += tan(millis()) / 2;
+    position.x += sin(millis()) / 2;
   }
   
   void draw() {    
