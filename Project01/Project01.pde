@@ -1,5 +1,5 @@
 PVector position, target;
-boolean isRunning = false;
+boolean move = false;
 PImage deemo, deemoLeftside, deemoRightside;
 
 void setup() {
@@ -15,7 +15,7 @@ void setup() {
   deemoLeftside.resize(deemoLeftside.width/3, deemoLeftside.height/3);
   
   deemoRightside = loadImage("deemoRightside.png");
-  deemoRightside.resize(deemoRightside.width/2, deemoRightside.height/2);
+  deemoRightside.resize(deemoRightside.width/3, deemoRightside.height/3);
   
   imageMode(CENTER);
   
@@ -25,15 +25,15 @@ void draw() {
  background(255, 255, 255);
  
  PVector mousePos = new PVector(mouseX, mouseY);
- isRunning = position.dist(mousePos) < 100;
+ move = position.dist(mousePos) < 100;
  
- if (isRunning) {
+ if (move) {
    position = position.lerp(target, 0.08);
    if (position.dist(target) < 5) {
      target = new PVector(random(width), random(height));
    }
  }
- image(deemo, position.x, position.y);
+ image(deemoRightside, position.x, position.y);
  
  if (mousePressed) {
    image(deemoLeftside, position.x, position.y);
