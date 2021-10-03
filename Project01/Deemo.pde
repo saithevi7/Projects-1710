@@ -1,7 +1,7 @@
 class Deemo {
 
   PVector position, target;
-  PImage currentDeemo, deemo, deemoLeftside, deemoRightside;
+  PImage currentDeemo, deemo, deemoLeftside, inverseDeemo;
   int findNotes;
   
   boolean move = false;
@@ -16,13 +16,18 @@ class Deemo {
   // Constructor
   Deemo(float x, float y) {
     position = new PVector(x, y);
-    pickNoteFind();
+    pickNoteSearch();
     
     deemo = loadImage("deemo.png");
     deemo.resize(deemo.width/2, deemo.height/2);
     
     deemoLeftside = loadImage("deemoLeftside.png");
     deemoLeftside.resize(deemoLeftside.width/3, deemoLeftside.height/3);
+        
+    
+    inverseDeemo = loadImage("white_Deemo.png");
+    inverseDeemo.resize(inverseDeemo.width/2, inverseDeemo.height/2);
+     
         
     currentDeemo = deemo;
   }
@@ -36,16 +41,14 @@ class Deemo {
       moveMarkTime = millis();
       currentDeemo = deemoLeftside; 
       if (position.dist(target) < triggerDistance2) {
-        pickNoteFind();
+        pickNoteSearch();
       }
-      // nothing happens, then search for target
+      // no interaction, then search for target
       if (!searching) {
         noteTarget();
         searching = true;
-      }
-      else if (!move && millis() > moveMarkTime + moveTimeOut/2) {
-       currentDeemo = deemo; // neutral expression
-    }
+        currentDeemo = deemoLeftside; 
+      }     
   }
   
     // delay in gaining the note to give more of a "ghostly" feeling
@@ -53,11 +56,18 @@ class Deemo {
       position = position.lerp(target, 0.08).add(new PVector(random(-1, 2), random(-1, 2)));
     }
     
+    if (notes[findNotes].appear == false) {
+      background(0);
+      currentDeemo = inverseDeemo;
+    }
+    
     if (searching && position.dist(target) < 5) {
       notes[findNotes].appear = false; 
       noteTarget();
     }
     
+    
+       
     position.y += tan(millis()) / 2;
     position.x += sin(millis()) / 2;
   }
@@ -73,7 +83,7 @@ class Deemo {
     draw();
   }
   
-  void pickNoteFind() {
+  void pickNoteSearch() {
     target = new PVector(random(50, width-50), random(50, height-50));
   }
   
@@ -83,5 +93,8 @@ class Deemo {
       target = notes[findNotes].position;
     }
   }
+  
+  
+  
   
 }
