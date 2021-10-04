@@ -1,15 +1,25 @@
+/*
+Class for the character Deemo
+This setup was inspired from Nick Fox-Gieg's repo from Week04, Creature03, Food
+https://github.com/eecs17xx/eecs1710-2021f/blob/main/Week04/Creature03/Food.pde
+*/
+
+// music notes class
 class musicNotes {
   
-  PVector position;
+  // variables 
+  PVector position;  
   boolean appear = true;
   
+  // contructor
   musicNotes(float x, float y) {
     position = new PVector(x, y);
   }
      
-  void update() {
+  void update() { 
   }
   
+  // music note
   void draw() {
     if(appear) {
       ellipseMode(CENTER);
@@ -21,7 +31,7 @@ class musicNotes {
       
     }
   }
-  
+
   void run() {
     update();
     draw();
