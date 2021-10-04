@@ -1,5 +1,5 @@
 /*
-Class for the character Deemo
+Class for the character Music Notes
 This setup was inspired from Nick Fox-Gieg's repo from Week04, Creature03, Food
 https://github.com/eecs17xx/eecs1710-2021f/blob/main/Week04/Creature03/Food.pde
 */
