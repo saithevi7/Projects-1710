@@ -14,11 +14,9 @@ class Objects {
   
   Objects() {
     pos = new PVector(random(width), random(height-600));
-    
-    //colour = color(random(255), random(255), random(255));
+   
     spawnNum = int(random(10));
-    
-    
+     
     bob_Omb = loadImage("bob_Omb.png");
     plant = loadImage("piranha_Plant.png");
     
@@ -29,10 +27,10 @@ class Objects {
 //https://github.com/eecs17xx/eecs1710-2021f/blob/main/Week07/Artillery03/Enemy.pde
   void update() {
     
-    if (pos.dist(pos) <5) {
+    if (pos.dist(pos) <5) { // delete bullets if not present
       present = false;
     }
-    for (Bullets bullets : trigger.bullet) {
+    for (Bullets bullets : trigger.bullet) { // hitbox interactions
       if(present && HitBox(pos, bullets.pos, size)) {
         present = false;
       }
@@ -43,7 +41,7 @@ class Objects {
   void draw() {
     noStroke();
     if (spawnNum==0) {
-      image(bob_Omb,pos.x, pos.y, 60, 60);
+      image(bob_Omb,pos.x, pos.y, 60, 60); // spawn objects
     } else {      
       image(plant, pos.x, pos.y, 60, 60);
       
