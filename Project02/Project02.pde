@@ -2,7 +2,8 @@
 Sairus Pradhan (218946467)
 LE EECS 1710 - Lab 1
 10 / 18/ 2021
-I couldn't find a way to make the trigger rotate. Shooting is off, hitbox interactions
+Wanted a moveable ship with rotating trigger shots.
+But I couldn't find a way to make the trigger rotate. Shooting is off, hitbox interactions
 don't seem to work. Everything else outputs fine.
 */
 
