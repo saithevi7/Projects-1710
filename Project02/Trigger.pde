@@ -16,12 +16,12 @@ class Trigger {
   }
   
   void update() {   
-    clockwise += counterClockwise;
+    clockwise += counterClockwise; // rotate trigger (won't work)
     if (clockwise < -180 || clockwise > 110) {
       counterClockwise *= -1;
     }
     
-    for(int i=bullet.size()-1; i>=0; i--) {
+    for(int i=bullet.size()-1; i>=0; i--) { // count bullents
      Bullets bullets = bullet.get(i); 
      if(bullets.present) {
        bullets.run();
@@ -33,14 +33,14 @@ class Trigger {
   }
   
   void shoot() {
-    bullet.add(new Bullets(pos.x, pos.y, clockwise));
+    bullet.add(new Bullets(pos.x, pos.y, clockwise)); //shoot
   }
   
-  void draw() {
+  void draw() {  // rotate trigger (won't work)
     pushMatrix();
     stroke(255);
     fill(0);
-    rect(mouseX, mouseY, 30, 60);
+    rect(mouseX, mouseY, 30, 60); 
     rotate(radians(clockwise));
     popMatrix();
     
