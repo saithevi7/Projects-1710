@@ -1,36 +1,35 @@
+// https://github.com/eecs17xx/eecs1710-2021f/blob/main/Week07/Artillery03/Bullet.pde
 class Bullets {
   
   PVector pos;
-  float lifeSpan;
+  float clockwise;
   int timeStamp;
   float speed = 10;
   float offset = 50;
   boolean present = true;
-  int timePresent = 1500;
+  int timePresent = 1000;
   
-  Bullets(float x, float y, float _lifeSpan) {
+  Bullets(float x, float y, float _clockwise) {
     pos = new PVector(x, y);
-    lifeSpan = _lifeSpan;
+    clockwise = _clockwise;
     timePresent = millis();
-    newPosition(offset);
+    newPos(offset);
   }
   
   // https://www.emanueleferonato.com/2007/04/28/create-a-flash-artillery-game-step-1/
-  void newPosition(float _speed) {
-    pos.x += _speed * sin(radians(lifeSpan));
-    pos.x += _speed * cos(radians(lifeSpan));
+  void newPos(float _speed) {
+    pos.x += _speed * sin(radians(clockwise));
+    pos.y += _speed * cos(radians(clockwise));
   }
   
   void update() {
-    newPosition(speed);
+    newPos(speed);
     
-    if (present && millis() > timeStamp + timePresent) {
-      present = false;
-    }
   }
     
   void draw() {
-    fill(255);
+    stroke(255);
+    fill(0);
     rect(pos.x, pos.y, 15, 8);
   }
   
