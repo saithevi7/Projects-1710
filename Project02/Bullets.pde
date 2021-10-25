@@ -27,7 +27,7 @@ class Bullets {
     
   }
     
-  void draw() {
+  void draw() { // draw bullets
     stroke(255);
     fill(0);
     rect(pos.x, pos.y, 15, 8);
