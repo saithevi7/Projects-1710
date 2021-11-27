@@ -12,7 +12,7 @@ https://github.com/eecs17xx/eecs1710-2021f/tree/main/Week04/Creature03
 P.S. Pictures for the Deemo figure and Notes were drawn.
 */
 
-// variables
+// Variables
 int numDeemo = 1;
 int numNotes = 8;
 
