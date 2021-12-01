@@ -5,8 +5,8 @@ LE EECS 1710 - Lab 1
 Here in this project, I tried to make a dark zombie game. I tried to 
 implement this cool brightness light effect and other pixel effects. 
 First I tried to make it so random zombies would spawn by using an 
-array and another class but then it would just would spawn 1 zombie so 
-I stuck with this. 
+array and another class but then it would either spawn 1 zombie 
+and/or the zombies would go over the darkness so I stuck with this. 
 */
 
 // Variables
