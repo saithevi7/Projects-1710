@@ -44,7 +44,7 @@ void draw() {
   ellipse(351, 140, audio.left.get(1)*800, 200);
   
   fill(216, 191, 216);
-   ellipse(400, 460, audio.left.get(1)*800, 200);
+  ellipse(400, 460, audio.left.get(1)*800, 200);
    
   fill(176, 196, 222);
   ellipse(400, 460, audio.left.get(1)*400, 50);
